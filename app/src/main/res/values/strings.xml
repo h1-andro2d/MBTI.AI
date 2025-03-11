@@ -1,0 +1,210 @@
+<resources>
+    <string name="app_name">AI Personality-Test</string>
+    <!-- N (Neuroticism) -->
+    <string name="xlt_key_n1">I worry about things.</string>
+    <string name="xlt_key_n2">I get angry easily.</string>
+    <string name="xlt_key_n3">I often feel blue.</string>
+    <string name="xlt_key_n4">I panic easily.</string>
+    <string name="xlt_key_n5">I get stressed out easily.</string>
+
+    <!-- E (Extraversion) -->
+    <string name="xlt_key_e1">I make friends easily.</string>
+    <string name="xlt_key_e2">I love large parties.</string>
+    <string name="xlt_key_e3">I take charge.</string>
+    <string name="xlt_key_e4">I love excitement.</string>
+    <string name="xlt_key_e5">I feel comfortable around people.</string>
+
+    <!-- O (Openness) -->
+    <string name="xlt_key_o1">I have a vivid imagination.</string>
+    <string name="xlt_key_o2">I believe in the importance of art.</string>
+    <string name="xlt_key_o3">I experience my emotions intensely.</string>
+    <string name="xlt_key_o4">I love to read challenging material.</string>
+    <string name="xlt_key_o5">I enjoy wild flights of fantasy.</string>
+
+    <!-- A (Agreeableness) -->
+    <string name="xlt_key_a1">I trust others.</string>
+    <string name="xlt_key_a2">I love to help others.</string>
+    <string name="xlt_key_a3">I love a good fight.</string>
+    <string name="xlt_key_a4">I sympathize with the homeless.</string>
+    <string name="xlt_key_a5">I feel others\' emotions.</string>
+
+    <!-- C (Conscientiousness) -->
+    <string name="xlt_key_c1">I complete tasks successfully.</string>
+    <string name="xlt_key_c2">I like to tidy up.</string>
+    <string name="xlt_key_c3">I keep my promises.</string>
+    <string name="xlt_key_c4">I work hard.</string>
+    <string name="xlt_key_c5">I carry out my plans.</string>
+
+    <string name="xlt_strongly_agree">Strongly Agree</string>
+    <string name="xlt_agree">Agree</string>
+    <string name="xlt_neutral">Neutral</string>
+    <string name="xlt_disagree">Disagree</string>
+    <string name="xlt_strongly_disagree">Strongly Disagree</string>
+
+    <string name="xlt_simple_test_title">Simple Test</string>
+    <string name="xlt_simple_test_time">1-minute</string>
+
+    <string name="xlt_full_test_title">Full Test</string>
+    <string name="xlt_full_test_time">3-minute</string>
+
+    <string name="xlt_istj">Logistician</string>
+    <string name="xlt_isfj">Defender</string>
+    <string name="xlt_infj">Advocate</string>
+    <string name="xlt_intj">Architect</string>
+    <string name="xlt_istp">Virtuoso</string>
+    <string name="xlt_isfp">Adventurer</string>
+    <string name="xlt_infp">Mediator</string>
+    <string name="xlt_intp">Logician</string>
+    <string name="xlt_estp">Entrepreneur</string>
+    <string name="xlt_esfp">Entertainer</string>
+    <string name="xlt_enfp">Campaigner</string>
+    <string name="xlt_entp">Debater</string>
+    <string name="xlt_estj">Executive</string>
+    <string name="xlt_esfj">Consul</string>
+    <string name="xlt_enfj">Protagonist</string>
+    <string name="xlt_entj">Commander</string>
+
+    <string name="xlt_retry">Retry</string>
+    <string name="xlt_ai_report_title">AI Personality Test Report</string>
+    <string name="xlt_empty"> </string>
+
+    <string name="xlt_main_title">Personality Test</string>
+    <string name="xlt_main_sub_title">AI-based</string>
+
+    <string name="xlt_main_network_error">Temporarily unable to retrieve the results due to a network error.</string>
+
+    <!-- Neuroticism -->
+    <string name="xlt_full_n1">I worry about things.</string>
+    <string name="xlt_full_n2">I get angry easily.</string>
+    <string name="xlt_full_n3">I often feel blue.</string>
+    <string name="xlt_full_n4">I find it difficult to approach others.</string>
+    <string name="xlt_full_n5">I go on binges.</string>
+    <string name="xlt_full_n6">I panic easily.</string>
+    <string name="xlt_full_n7">I fear for the worst.</string>
+    <string name="xlt_full_n8">I get irritated easily.</string>
+    <string name="xlt_full_n9">I dislike myself.</string>
+    <string name="xlt_full_n10">I am afraid to draw attention to myself.</string>
+    <string name="xlt_full_n11">I rarely overindulge.</string>
+    <string name="xlt_full_n12">I become overwhelmed by events.</string>
+    <string name="xlt_full_n13">I am afraid of many things.</string>
+    <string name="xlt_full_n14">I lose my temper.</string>
+    <string name="xlt_full_n15">I am often down in the dumps.</string>
+    <string name="xlt_full_n16">I only feel comfortable with friends.</string>
+    <string name="xlt_full_n17">I easily resist temptations.</string>
+    <string name="xlt_full_n18">I feel that I\'m unable to deal with things.</string>
+    <string name="xlt_full_n19">I get stressed out easily.</string>
+    <string name="xlt_full_n20">I am not easily annoyed.</string>
+    <string name="xlt_full_n21">I feel comfortable with myself.</string>
+    <string name="xlt_full_n22">I am not bothered by difficult social situations.</string>
+    <string name="xlt_full_n23">I am able to control my cravings.</string>
+    <string name="xlt_full_n24">I remain calm under pressure.</string>
+    <string name="xlt_full_n25">I am not easily annoyed.</string>
+
+    <!-- Extraversion -->
+    <string name="xlt_full_e1">I make friends easily.</string>
+    <string name="xlt_full_e2">I love large parties.</string>
+    <string name="xlt_full_e3">I take charge.</string>
+    <string name="xlt_full_e4">I am always busy.</string>
+    <string name="xlt_full_e5">I love excitement.</string>
+    <string name="xlt_full_e6">I radiate joy.</string>
+    <string name="xlt_full_e7">I feel comfortable around people.</string>
+    <string name="xlt_full_e8">I talk to a lot of different people at parties.</string>
+    <string name="xlt_full_e9">I try to lead others.</string>
+    <string name="xlt_full_e10">I am always on the go.</string>
+    <string name="xlt_full_e11">I seek adventure.</string>
+    <string name="xlt_full_e12">I have a lot of fun.</string>
+    <string name="xlt_full_e13">I avoid contacts with others.</string>
+    <string name="xlt_full_e14">I prefer to be alone.</string>
+    <string name="xlt_full_e15">I take control of things.</string>
+    <string name="xlt_full_e16">I do a lot in my spare time.</string>
+    <string name="xlt_full_e17">I act wild and crazy.</string>
+    <string name="xlt_full_e18">I love life.</string>
+    <string name="xlt_full_e19">I keep others at a distance.</string>
+    <string name="xlt_full_e20">I avoid crowds.</string>
+    <string name="xlt_full_e21">I wait for others to lead the way.</string>
+    <string name="xlt_full_e22">I like to take it easy.</string>
+    <string name="xlt_full_e23">I act wild and crazy.</string>
+    <string name="xlt_full_e24">I look at the bright side of life.</string>
+    <string name="xlt_full_e25">I avoid crowds.</string>
+
+    <!-- Openness -->
+    <string name="xlt_full_o1">I have a vivid imagination.</string>
+    <string name="xlt_full_o2">I believe in the importance of art.</string>
+    <string name="xlt_full_o3">I experience my emotions intensely.</string>
+    <string name="xlt_full_o4">I prefer variety to routine.</string>
+    <string name="xlt_full_o5">I love to read challenging material.</string>
+    <string name="xlt_full_o6">I tend to vote for liberal political candidates.</string>
+    <string name="xlt_full_o7">I enjoy wild flights of fantasy.</string>
+    <string name="xlt_full_o8">I see beauty in things that others might not notice.</string>
+    <string name="xlt_full_o9">I feel others\' emotions.</string>
+    <string name="xlt_full_o10">I prefer to stick with things that I know.</string>
+    <string name="xlt_full_o11">I avoid philosophical discussions.</string>
+    <string name="xlt_full_o12">I believe that there is no absolute right and wrong.</string>
+    <string name="xlt_full_o13">I love to daydream.</string>
+    <string name="xlt_full_o14">I do not like poetry.</string>
+    <string name="xlt_full_o15">I rarely notice my emotional reactions.</string>
+    <string name="xlt_full_o16">I dislike changes.</string>
+    <string name="xlt_full_o17">I have difficulty understanding abstract ideas.</string>
+    <string name="xlt_full_o18">I tend to vote for conservative political candidates.</string>
+    <string name="xlt_full_o19">I like to get lost in thought.</string>
+    <string name="xlt_full_o20">I do not enjoy going to art museums.</string>
+    <string name="xlt_full_o21">I don\'t understand people who get emotional.</string>
+    <string name="xlt_full_o22">I am attached to conventional ways.</string>
+    <string name="xlt_full_o23">I am not interested in theoretical discussions.</string>
+    <string name="xlt_full_o24">I believe that we should be tough on crime.</string>
+    <string name="xlt_full_o25">I do not enjoy going to art museums.</string>
+
+    <!-- Agreeableness -->
+    <string name="xlt_full_a1">I trust others.</string>
+    <string name="xlt_full_a2">I use others for my own ends.</string>
+    <string name="xlt_full_a3">I love to help others.</string>
+    <string name="xlt_full_a4">I love a good fight.</string>
+    <string name="xlt_full_a5">I believe that I am better than others.</string>
+    <string name="xlt_full_a6">I sympathize with the homeless.</string>
+    <string name="xlt_full_a7">I believe that others have good intentions.</string>
+    <string name="xlt_full_a8">I cheat to get ahead.</string>
+    <string name="xlt_full_a9">I am concerned about others.</string>
+    <string name="xlt_full_a10">I yell at people.</string>
+    <string name="xlt_full_a11">I think highly of myself.</string>
+    <string name="xlt_full_a12">I feel sympathy for those who are worse off than myself.</string>
+    <string name="xlt_full_a13">I trust what people say.</string>
+    <string name="xlt_full_a14">I take advantage of others.</string>
+    <string name="xlt_full_a15">I am indifferent to the feelings of others.</string>
+    <string name="xlt_full_a16">I insult people.</string>
+    <string name="xlt_full_a17">I have a high opinion of myself.</string>
+    <string name="xlt_full_a18">I am not interested in other people\'s problems.</string>
+    <string name="xlt_full_a19">I distrust people.</string>
+    <string name="xlt_full_a20">I obstruct others\' plans.</string>
+    <string name="xlt_full_a21">I take no time for others.</string>
+    <string name="xlt_full_a22">I get back at others.</string>
+    <string name="xlt_full_a23">I boast about my virtues.</string>
+    <string name="xlt_full_a24">I try not to think about the needy.</string>
+    <string name="xlt_full_a25">I obstruct others\' plans.</string>
+
+    <!-- Conscientiousness -->
+    <string name="xlt_full_c1">I complete tasks successfully.</string>
+    <string name="xlt_full_c2">I like to tidy up.</string>
+    <string name="xlt_full_c3">I keep my promises.</string>
+    <string name="xlt_full_c4">I work hard.</string>
+    <string name="xlt_full_c5">I am always prepared.</string>
+    <string name="xlt_full_c6">I jump into things without thinking.</string>
+    <string name="xlt_full_c7">I excel in what I do.</string>
+    <string name="xlt_full_c8">I often forget to put things back in their proper place.</string>
+    <string name="xlt_full_c9">I tell the truth.</string>
+    <string name="xlt_full_c10">I do more than what\'s expected of me.</string>
+    <string name="xlt_full_c11">I carry out my plans.</string>
+    <string name="xlt_full_c12">I make rash decisions.</string>
+    <string name="xlt_full_c13">I handle tasks smoothly.</string>
+    <string name="xlt_full_c14">I leave a mess in my room.</string>
+    <string name="xlt_full_c15">I break rules.</string>
+    <string name="xlt_full_c16">I do just enough work to get by.</string>
+    <string name="xlt_full_c17">I waste my time.</string>
+    <string name="xlt_full_c18">I rush into things.</string>
+    <string name="xlt_full_c19">I know how to get things done.</string>
+    <string name="xlt_full_c20">I leave my belongings around.</string>
+    <string name="xlt_full_c21">I break my promises.</string>
+    <string name="xlt_full_c22">I put little time and effort into my work.</string>
+    <string name="xlt_full_c23">I have difficulty starting tasks.</string>
+    <string name="xlt_full_c24">I act without thinking.</string>
+    <string name="xlt_full_c25">I leave my belongings around.</string>
+</resources>
