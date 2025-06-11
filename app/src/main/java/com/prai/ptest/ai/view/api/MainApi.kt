@@ -1,7 +1,9 @@
 package com.prai.ptest.ai.view.api
 
 import android.util.Log
+import java.util.concurrent.TimeUnit
 import kotlinx.coroutines.flow.MutableStateFlow
+import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -31,15 +33,25 @@ data class AnalysisResponse(
 
 object ApiClient {
     private const val BASE_URL = "https://4uvtr6xaqk.execute-api.ap-northeast-2.amazonaws.com"
+    val okHttpClient = OkHttpClient.Builder()
+        .connectTimeout(30, TimeUnit.SECONDS) // 연결 타임아웃
+        .readTimeout(30, TimeUnit.SECONDS) // 읽기 타임아웃
+        .writeTimeout(30, TimeUnit.SECONDS) // 쓰기 타임아웃
+        .retryOnConnectionFailure(true)
+        .build()
 
-    val retrofit: Retrofit by lazy {
+    val retrofit: Retrofit =
         Retrofit.Builder()
+            .client(okHttpClient)
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-    }
 
     val analysisResponse = MutableStateFlow<AnalysisResponse?>(null)
+
+    fun init() {
+        Log.d("MainAPI", "ApiClient is initialized")
+    }
 
     fun updateRequest(request: PersonalityRequest) {
         val apiService = retrofit.create(MainApi::class.java)

@@ -104,10 +104,11 @@ private fun ColorAnimationTextSimple(model: MainViewModel = viewModel()) {
             .clickable(interactionSource = interactionSource, indication = null) {
                 model.state.value = MainViewState.TEST
                 model.isSimple.value = true
-                model.questions.value = model.simpleQuestions
+                model.questions.value = model.simpleQuestions.shuffled()
                 model.index.value = 0
             }
             .fillMaxWidth()
+
             .background(color = boxColor, shape = RoundedCornerShape(20.dp))
             .padding(horizontal = 50.dp, vertical = 15.dp)
     ) {
@@ -155,7 +156,7 @@ private fun ColorAnimationTextFull(model: MainViewModel = viewModel()) {
             .clickable(interactionSource = interactionSource, indication = null) {
                 model.state.value = MainViewState.TEST
                 model.isSimple.value = true
-                model.questions.value = model.fullQuestions
+                model.questions.value = model.fullQuestions.shuffled()
                 model.index.value = 0
             }
             .fillMaxWidth()

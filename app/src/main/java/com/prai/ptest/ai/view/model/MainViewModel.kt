@@ -94,6 +94,7 @@ class MainViewModel : ViewModel() {
     fun goHome() {
         state.value = MainViewState.LOGO
         index.value = 0
+        response.value = null
         simpleChoices.clear()
         fullChoices.clear()
     }
@@ -156,10 +157,6 @@ class MainViewModel : ViewModel() {
             else -> null
         }
     }
-
-    val explainText =
-        "통솔자(ENTJ)는 타고난 리더라고 할 수 있습니다. 이들은 카리스마와 자신감을 지니고 있으며 자신의 권한을 이용해 사람들이 공통된 목표를 위해 함께 노력하도록 이끕니다. 또한 이들은 냉철한 이성을 지닌 것으로 유명하며 자신이 원하는 것을 성취하기 위해 열정과 결단력과 날카로운 지적 능력을 활용합니다. 이들은 전체 인구의 3%에 불과하지만, 다른 많은 성격을 압도하는 존재감을 뽐내며 다양한 비즈니스와 단체를 이끄는 역할을 할 때가 많습니다.\n\n통솔자는 도전을 즐기는 성격으로 충분한 시간과 자원이 주어진다면 어떠한 목표도 달성할 수 있다고 믿습니다. 이들은 훌륭한 사업가가 될 가능성이 높으며, 전략적 사고 능력과 장기적 목표에 집중하고 결단력 있게 계획을 실행하는 능력은 위대한 비즈니스 리더가 되는 데 도움이 됩니다. 이들은 강력한 의지로 다른 사람이 포기하는 상황에서도 굴하지 않고 목표를 추구하며, 외향적(E) 성향은 다른 사람이 목표를 이루는 과정에 협력하도록 하는 데 도움이 됩니다."
-
 
     val fullQuestions = listOf(
         // Neuroticism

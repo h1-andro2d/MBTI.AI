@@ -137,20 +137,22 @@ internal fun TestView(model: MainViewModel = viewModel()) {
                         gapSize = 0.dp
                     )
                 }
-                Spacer(modifier = Modifier.height(30.dp))
                 AnimatedText2("Q${index.value + 1}. ${stringResource(data.text)}")
-                Spacer(modifier = Modifier.height(15.dp))
+                Spacer(modifier = Modifier.weight(0.4f))
                 Image(
                     painter = painterResource(R.drawable.whale),
                     contentDescription = "",
                     modifier = Modifier.width(200.dp)
                 )
-                Spacer(modifier = Modifier.height(80.dp))
-                ColorAnimationText(stringResource(R.string.xlt_strongly_agree), 4, data)
-                ColorAnimationText(stringResource(R.string.xlt_agree), 3, data)
-                ColorAnimationText(stringResource(R.string.xlt_neutral), 2, data)
-                ColorAnimationText(stringResource(R.string.xlt_disagree), 1, data)
-                ColorAnimationText(stringResource(R.string.xlt_strongly_disagree), 0, data)
+                Spacer(modifier = Modifier.weight(1f))
+                Column {
+
+                    ColorAnimationText(stringResource(R.string.xlt_strongly_agree), 4, data)
+                    ColorAnimationText(stringResource(R.string.xlt_agree), 3, data)
+                    ColorAnimationText(stringResource(R.string.xlt_neutral), 2, data)
+                    ColorAnimationText(stringResource(R.string.xlt_disagree), 1, data)
+                    ColorAnimationText(stringResource(R.string.xlt_strongly_disagree), 0, data)
+                }
             }
         }
     }
@@ -232,7 +234,7 @@ private fun ColorAnimationText(
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
-            .padding(7.dp)
+            .padding(horizontal = 10.dp, vertical = 7.dp)
             .fillMaxWidth()
             .clickable(interactionSource = interactionSource, indication = null) {
                 model.onAnswerClicked(question, index)
@@ -254,7 +256,7 @@ private fun ColorAnimationText(
 }
 
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, widthDp = 800, heightDp = 720)
 @Composable
 private fun Preview() {
     TestView()

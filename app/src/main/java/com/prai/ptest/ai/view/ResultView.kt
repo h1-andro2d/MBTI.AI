@@ -1,7 +1,6 @@
 package com.prai.ptest.ai.view
 
 import android.content.Context
-import android.os.Build
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Animatable
@@ -22,6 +21,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.LinearProgressIndicator
@@ -64,7 +64,10 @@ import kotlinx.coroutines.delay
 internal fun ResultView(model: MainViewModel = viewModel()) {
     val state = model.state.collectAsStateWithLifecycle()
     var textVisible by remember { mutableStateOf(false) }
-    val result = model.calculateResult()
+    var result by remember { mutableStateOf(model.calculateResult())  }
+    if (state.value == MainViewState.RESULT) {
+        result = model.calculateResult()
+    }
     val context = LocalContext.current
     val isKorean = isKoreanLanguage(context)
     LaunchedEffect(state.value) {
@@ -162,7 +165,7 @@ internal fun ResultView(model: MainViewModel = viewModel()) {
             item {
                 Column(
                     modifier = Modifier
-                        .fillMaxWidth()
+                        .widthIn(max = 400.dp)
                         .padding(horizontal = 20.dp)
                         .background(color = Color(0x2299AAFF), shape = RoundedCornerShape(20.dp))
                         .border(
@@ -170,16 +173,17 @@ internal fun ResultView(model: MainViewModel = viewModel()) {
                             color = Color(0xFF99AAFF),
                             shape = RoundedCornerShape(20.dp)
                         )
-                        .padding(horizontal = 5.dp, vertical = 10.dp),
+                        .padding(horizontal = 5.dp, vertical = 10.dp)
+                        .widthIn(max = 450.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     val ei = (result.ei.toFloat() / 100)
                     val sn = (result.sn.toFloat() / 100)
-                    val ft = (result.ei.toFloat() / 100)
+                    val tf = (result.tf.toFloat() / 100)
                     val jp = (result.jp.toFloat() / 100)
                     Bar("I", "E", ei, result.ei > 50, 2000L)
                     Bar("N", "S", sn, result.sn <= 50, 4000L)
-                    Bar("F", "T", ft, result.tf <= 50, 6000L)
+                    Bar("F", "T", tf, result.tf <= 50, 6000L)
                     Bar("P", "J", jp, result.jp > 50, 8000L)
                 }
             }
@@ -197,7 +201,7 @@ internal fun ResultView(model: MainViewModel = viewModel()) {
 //            }
             item {
                 TypingAnimationTitle(stringResource(R.string.xlt_ai_report_title))
-                TypingAnimationTextContent(result)
+                TypingAnimationTextContent(stringResource(R.string.xlt_ai_report_title), result)
 //                Text(
 //                    "통솔자(ENTJ)는 타고난 리더라고 할 수 있습니다. 이들은 카리스마와 자신감을 지니고 있으며 자신의 권한을 이용해 사람들이 공통된 목표를 위해 함께 노력하도록 이끕니다. 또한 이들은 냉철한 이성을 지닌 것으로 유명하며 자신이 원하는 것을 성취하기 위해 열정과 결단력과 날카로운 지적 능력을 활용합니다. 이들은 전체 인구의 3%에 불과하지만, 다른 많은 성격을 압도하는 존재감을 뽐내며 다양한 비즈니스와 단체를 이끄는 역할을 할 때가 많습니다.",
 //                    fontSize = 14.sp,
@@ -265,10 +269,12 @@ private fun Bar(
                 Color(0x336677FF)
             },
             textAlign = TextAlign.Center,
-            modifier = Modifier.width(20.dp)
+            modifier = Modifier
+                .padding(start = 4.dp)
+                .width(20.dp)
         )
         Box(
-            modifier = Modifier.padding(horizontal = 20.dp),
+            modifier = Modifier.weight(1f).padding(horizontal = 10.dp),
             contentAlignment = Alignment.Center
         ) {
             if (red) {
@@ -287,7 +293,9 @@ private fun Bar(
                 Color(0x33D65BA6)
             },
             textAlign = TextAlign.Center,
-            modifier = Modifier.width(20.dp)
+            modifier = Modifier
+                .padding(end = 4.dp)
+                .width(20.dp)
         )
     }
 }
@@ -338,7 +346,8 @@ private fun IndicatorBlue(progress: Float, delay: Long, model: MainViewModel = v
 }
 
 @Composable
-private fun IndicatorRed(progress: Float, delay: Long, model: MainViewModel = viewModel()) {
+private fun IndicatorRed(
+    progress: Float, delay: Long, model: MainViewModel = viewModel()) {
     val state = model.state.collectAsStateWithLifecycle()
     val animatedProgress by remember { mutableStateOf(Animatable(initialValue = 0f)) }
 
@@ -462,15 +471,12 @@ fun isKoreanLanguage(context: Context): Boolean {
 }
 
 @Composable
-private fun TypingAnimationTextContent(result: TestResult, model: MainViewModel = viewModel()) {
+private fun TypingAnimationTextContent(title: String, result: TestResult, model: MainViewModel = viewModel()) {
     val response = model.response.collectAsStateWithLifecycle()
-    val input: String = if (response.value != null && result.type == response.value?.mbti_type) {
-        response.value?.analysis ?: stringResource(R.string.xlt_main_network_error)
-    } else {
-        stringResource(R.string.xlt_main_network_error)
-    }
     val state = model.state.collectAsStateWithLifecycle()
-    val breakIterator = remember(input) { BreakIterator.getCharacterInstance() }
+
+    val errorText = stringResource(R.string.xlt_main_network_error)
+    val breakIterator = BreakIterator.getCharacterInstance()
     val typingDelayInMs = 50L
 
     var substringText by remember {
@@ -478,7 +484,12 @@ private fun TypingAnimationTextContent(result: TestResult, model: MainViewModel 
     }
     LaunchedEffect(state.value) {
         if (state.value == MainViewState.RESULT) {
-            delay(12000)
+            delay(10000L + (title.length * 50 + 200))
+            val input = if (response.value != null && result.type == response.value?.mbti_type) {
+                response.value?.analysis ?: errorText
+            } else {
+                errorText
+            }
             breakIterator.text = StringCharacterIterator(input)
             var nextIndex = breakIterator.next()
             while (nextIndex != BreakIterator.DONE) {
@@ -535,7 +546,7 @@ private fun RetryText(model: MainViewModel = viewModel()) {
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, widthDp = 700)
 @Composable
 private fun Preview() {
     ResultView()
